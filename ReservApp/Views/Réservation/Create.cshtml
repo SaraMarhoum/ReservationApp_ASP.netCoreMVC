@@ -1,0 +1,66 @@
+﻿@model ReservApp.Models.Réservation
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Réserver</h1>
+
+<hr style="width: 36%; float: left;" />
+
+<div class="container_roleMng" style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; width: 113%;">
+
+
+
+    <form asp-action="Create" class="box1" style="padding-bottom: 6rem; width: 25rem; padding-left: 4rem;">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Date" class="control-label"></label>
+            <input asp-for="Date" class="form-control" value="@DateTime.Now.AddDays(1).ToString("s")" name="date" readonly />
+            <span asp-validation-for="Date" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Type" class="control-label"></label>
+            <select asp-for="Type" class="form-control">
+                <option value="">Choisir un créneau</option>
+                @if (DateTime.Now.AddDays(1).DayOfWeek == DayOfWeek.Saturday || DateTime.Now.AddDays(1).DayOfWeek == DayOfWeek.Sunday)
+                {
+                    <option value="Week-End">Week-End</option>
+                }
+                else
+                {
+                    <option value="9h à 17h">9h à 17h</option>
+                    <option value="17h à 20h">17h à 20h</option>
+                }
+
+
+            </select>
+            <span asp-validation-for="Type" class="text-danger"></span>
+        </div>
+        <div class="form-group" hidden>
+            <label asp-for="Status" class="control-label"></label>
+            <input asp-for="Status" class="form-control" value="En Attente" />
+            <span asp-validation-for="Status" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Cause" class="control-label"></label>
+            <input asp-for="Cause" class="form-control" />
+            <span asp-validation-for="Cause" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Réserver" class="btn btn-primary" /> |
+            <a asp-action="IndexSTD" class="btn btn-outline-dark">Retour</a>
+        </div>
+    </form>
+
+    <div class="box2" style="margin-top: -6rem; width: 45rem">
+        <img src="~/img/undraw_date_picker_gorrpng.png" style="width:100%" />
+    </div>
+
+
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

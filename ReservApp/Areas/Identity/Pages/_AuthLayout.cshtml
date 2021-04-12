@@ -1,0 +1,57 @@
+﻿@{
+    Layout = "/Views/Shared/_LoginPage.cshtml";
+}
+
+<div class="container_2" style="display: flex; justify-content: space-around; flex-wrap: wrap-reverse; align-items: center; margin-left: -179px; margin-right: -179px; margin-top: 4rem;">
+    <div class="item1_log" style="width: 44rem; margin-left: 60px;">
+        <div class="item1_log_img1">
+            <img src="~/img/logo2.png" style="margin-left: 8rem" />
+        </div>
+        <h2 style="text-align: center; padding-top: 2rem">La pateforme des résérvations des apprenants à Youcode</h2>
+        <div class="item1_log_img2">
+            <img src="~/img/illLog1.png" style="width: 31rem; margin-left: 152px; padding-top: 2rem;" />
+        </div>
+    </div>
+
+<div class="row item2_log" style="width: 44rem; padding-top: 73px;">
+    <div class="col-md-9 offset-md-3" style="margin-left: 13% !important">
+        <div class="card login-logout-tab">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" href='/Identity/Account/Login'>Se connecter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='/Identity/Account/Register'>S'enregistrer</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+@section Scripts{
+    @await RenderSectionAsync("Scripts", required: false)
+
+
+    <script>
+        $(function () {
+            var current = location.pathname;
+            $('.nav-tabs li a').each(function () {
+                var $this = $(this);
+                if (current.indexOf($this.attr('href')) !== -1) {
+                    $this.addClass('active');
+                }
+            })
+
+        })
+    </script>
+}

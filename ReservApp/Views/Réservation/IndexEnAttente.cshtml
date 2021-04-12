@@ -1,0 +1,123 @@
+﻿@model IEnumerable<ReservApp.Models.RéservationViewmodel>
+
+@{
+    ViewData["Title"] = "IndexEnAttente";
+}
+<style>
+    .buttonsFltr__container {
+        margin-top: 44px;
+    }
+
+    .btn-fltr {
+        background-color: white;
+        color: black;
+        border: 2px solid #FFDA32;
+        padding: 10px 18px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 15px;
+    }
+
+    a:link {
+        text-decoration: none;
+    }
+
+    .btn-fltr:hover {
+        background-color: #FFDA32;
+        color: white;
+    }
+    table thead th {
+        position: sticky;
+        top: 0;
+        background-color: black;
+        color: white;
+    }
+</style>
+
+<h1>Réservations en attente</h1>
+
+<div class="buttonsFltr__container">
+    <a asp-action="IndexDemain" class="btn-fltr">Réservations pour demain</a>
+    <a asp-action="Index" class="btn-fltr">Toutes les réservations</a>
+</div>
+
+<div style="position: relative; width: 76rem; height: 440px; overflow: scroll; margin-top: 10px">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.nom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.prenom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.classe)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Type)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cause)
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.prenom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.classe)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cause)
+                </td>
+                <!--<td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Confirmer/Refuser</a>--> @*|
+            <a asp-action="Details" asp-route-id="@item.ID">Details</a>*@
+                <!--</td>-->
+            <td>
+                <a style="z-index: -1;" class="btn btn-primary" asp-action="Confirm" asp-route-id="@item.ID">Confirmer</a>
+                <a style="z-index: -1;" class="btn btn-danger" asp-action="Decline" asp-route-id="@item.ID">Refuser</a>
+            </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

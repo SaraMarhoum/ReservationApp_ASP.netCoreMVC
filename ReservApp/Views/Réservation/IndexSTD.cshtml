@@ -1,0 +1,180 @@
+﻿@model IEnumerable<ReservApp.Models.RéservationViewmodel>
+
+@{
+    ViewData["Title"] = "IndexSTD";
+}
+<style>
+    .STDrsvBTN {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        outline: none;
+        border: 0;
+        vertical-align: middle;
+        text-decoration: none;
+        background: transparent;
+        padding: 0;
+        font-size: inherit;
+        font-family: inherit;
+    }
+
+    a.STDrsvBTN {
+        width: 12rem;
+        height: auto;
+    }
+
+        a.STDrsvBTN .circle {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            position: relative;
+            display: block;
+            margin: 0;
+            width: 3rem;
+            height: 3rem;
+            background: #FFDA32;
+            border-radius: 1.625rem;
+        }
+
+            a.STDrsvBTN .circle .icon {
+                transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                background: #fff;
+            }
+
+                a.STDrsvBTN .circle .icon.arrow {
+                    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+                    left: 0.625rem;
+                    width: 1.125rem;
+                    height: 0.125rem;
+                    background: none;
+                }
+
+                    a.STDrsvBTN .circle .icon.arrow::before {
+                        position: absolute;
+                        content: "";
+                        top: -0.25rem;
+                        right: 0.0625rem;
+                        width: 0.625rem;
+                        height: 0.625rem;
+                        border-top: 0.125rem solid #fff;
+                        border-right: 0.125rem solid #fff;
+                        transform: rotate(45deg);
+                    }
+
+        a.STDrsvBTN .button-text {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 0.75rem 0;
+            margin: 0 0 0 1.85rem;
+            color: #282936;
+            font-weight: 700;
+            line-height: 1.6;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+    a:hover .circle {
+        width: 100%;
+    }
+
+        a:hover .circle .icon.arrow {
+            background: #fff;
+            transform: translate(1rem, 0);
+        }
+
+    a:hover .button-text {
+        color: #fff;
+    }
+
+    @@supports (display: grid) {
+
+        #container_STDrsvBTN {
+            grid-area: main;
+            align-self: center;
+            justify-self: center;
+            /*float: right;*/
+        }
+    }
+    table thead th {
+        position: sticky;
+        top: 0;
+        background-color: black;
+        color: white;
+    }
+</style>
+
+
+
+<h1>Ma liste de réservations</h1>
+
+<div id="container_STDrsvBTN">
+    <a class="STDrsvBTN" asp-action="Create">
+        <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+        </span>
+        <span class="button-text">Réserver</span>
+    </a>
+
+    <div style="display: inline-flex; margin-left: 23rem">
+        <form class="form-inline my-2 my-lg-0 mr-4" method="get" asp-controller="Réservation" asp-action="IndexSTD">
+            <input class="form-control mr-sm-4" type="search" placeholder="Filter par date/crénaux/Status" value="@ViewData["GetReservAprDetails"]"
+                   name="ResrveApprSearch" style="width: 254px;">
+            <button class="btn my-2 my-sm-0 text-white" type="submit" value="Search" style="background-color:#FFDA32">Chercher</button>
+        </form>
+    </div>
+</div>
+
+
+<div style="position: relative; width: 76rem; height: 440px; overflow: scroll; margin-top: 10px">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Type)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Status)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cause)
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cause)
+                    </td>
+                    <td>
+                        <a style="z-index: -1;" class="btn btn-warning" asp-action="Edit" asp-route-id="@item.ID">Modifier</a>
+                        <a style="z-index: -1;" class="btn btn-danger" asp-action="Delete" asp-route-id="@item.ID">Supprimer</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

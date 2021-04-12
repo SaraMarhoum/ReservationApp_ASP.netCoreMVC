@@ -1,0 +1,59 @@
+﻿@model ReservApp.Models.Réservation
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Supprimer</h1>
+
+<h3>Vous êtes sûr de vouloir supprimer cette réservation ?</h3>
+<hr style="width: 36%; float: left;" />
+
+<div class="container_roleMng" style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; width: 113%;">
+    <div class="box1" style="padding-bottom: 6rem; width: 25rem; padding-left: 4rem;">
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Date)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Date)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Type)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Type)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Status)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Cause)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Cause)
+            </dd>
+            <dt class="col-sm-2" hidden>
+                @Html.DisplayNameFor(model => model.Apprenants)
+            </dt>
+            <dd class="col-sm-10" hidden>
+                @Html.DisplayFor(model => model.Apprenants.Id)
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="ID" />
+            <input type="submit" value="Supprimer" class="btn btn-danger" /> |
+            <a asp-action="IndexSTD" class="btn btn-outline-dark">Retourner à la liste</a>
+        </form>
+    </div>
+
+    <div class="box2" style="margin-top: -6rem; width: 45rem">
+        <img src="~/img/undraw_Throw_away_re_x60k.png" style="width:100%" />
+    </div>
+
+
+</div>
