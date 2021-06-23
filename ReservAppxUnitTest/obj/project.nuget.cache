@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pJPXBNeKfQ/ML/Cuu/sxrjZRszsTVPHRGfgJfgwYhdywLziSJLqPui6QicY1oOHhW/1woxzO5GjYeHeSeff+rQ==",
+  "dgSpecHash": "ycxzB5lhSZ+5uYVhoFpa0ScV3P+Jfx7TgsBcxM6ogQEW5Z4teLB62/3uBS2N1yGOLbwSBksIb1OV30QU3+I3qw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Youcode\\Desktop\\ReservationApp_ASP.netCoreMVC\\ReservAppxUnitTest\\ReservAppxUnitTest.csproj",
   "expectedPackageFiles": [
@@ -95,6 +95,7 @@
     "C:\\Users\\Youcode\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",
     "C:\\Users\\Youcode\\.nuget\\packages\\microsoft.testplatform.objectmodel\\16.7.1\\microsoft.testplatform.objectmodel.16.7.1.nupkg.sha512",
     "C:\\Users\\Youcode\\.nuget\\packages\\microsoft.testplatform.testhost\\16.7.1\\microsoft.testplatform.testhost.16.7.1.nupkg.sha512",
+    "C:\\Users\\Youcode\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.14\\microsoft.visualstudio.azure.containers.tools.targets.1.10.14.nupkg.sha512",
     "C:\\Users\\Youcode\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\5.0.2\\microsoft.visualstudio.web.codegeneration.5.0.2.nupkg.sha512",
     "C:\\Users\\Youcode\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.contracts\\5.0.2\\microsoft.visualstudio.web.codegeneration.contracts.5.0.2.nupkg.sha512",
     "C:\\Users\\Youcode\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.core\\5.0.2\\microsoft.visualstudio.web.codegeneration.core.5.0.2.nupkg.sha512",
