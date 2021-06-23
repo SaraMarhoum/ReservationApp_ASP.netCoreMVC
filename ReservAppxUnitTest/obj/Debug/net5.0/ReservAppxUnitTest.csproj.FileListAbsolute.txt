@@ -511,3 +511,4 @@ C:\Users\Youcode\Desktop\ReservationApp_ASP.netCoreMVC\ReservAppxUnitTest\obj\De
 C:\Users\Youcode\Desktop\ReservationApp_ASP.netCoreMVC\ReservAppxUnitTest\obj\Debug\net5.0\ref\ReservAppxUnitTest.dll
 C:\Users\Youcode\Desktop\ReservationApp_ASP.netCoreMVC\ReservAppxUnitTest\obj\Debug\net5.0\ReservAppxUnitTest.pdb
 C:\Users\Youcode\Desktop\ReservationApp_ASP.netCoreMVC\ReservAppxUnitTest\obj\Debug\net5.0\ReservAppxUnitTest.genruntimeconfig.cache
+C:\Users\Youcode\Desktop\ReservationApp_ASP.netCoreMVC\ReservAppxUnitTest\bin\Debug\net5.0\ReservApp.StaticWebAssets.xml

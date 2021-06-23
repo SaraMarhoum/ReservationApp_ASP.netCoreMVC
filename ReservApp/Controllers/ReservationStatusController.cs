@@ -13,7 +13,6 @@ namespace ReservApp.Controllers
     [ApiController]
     public class ReservationStatusController : Controller
     {
-        private readonly ApplicationDbContext _db;
 
         private readonly IReservStatusService _reservStatusService;
 
@@ -22,12 +21,15 @@ namespace ReservApp.Controllers
             _reservStatusService = reservStatusService;
         }
 
+
         [HttpGet(nameof(GetReservStatusById))]
         public async Task<string> GetReservStatusById(int ID)
         {
             var result = await _reservStatusService.GetReservStatusById(ID);
             return result;
         }
+
+
         [HttpGet(nameof(GetReservStatusDetails))]
         public async Task<Réservation> GetReservStatusDetails(int ID)
         {
