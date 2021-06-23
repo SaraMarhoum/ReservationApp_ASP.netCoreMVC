@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using NToastNotify;
 using ReservApp.Data;
 using ReservApp.Models;
+using ReservApp.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,9 +29,7 @@ namespace ReservApp.Controllers
             _db = db;
             _userManager = userManager;
             this.toastNotification = toastNotification;
-
         }
-
 
         //Display list of all reservations
         //[Authorize(Policy = "ManageReservationpolicy")]

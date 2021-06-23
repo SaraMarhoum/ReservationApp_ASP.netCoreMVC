@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ReservApp.Data;
 using ReservApp.Models;
+using ReservApp.Services;
 
 namespace ReservApp
 {
@@ -36,6 +37,8 @@ namespace ReservApp
                 .AddDefaultUI()
                 .AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddScoped<IReservStatusService, ReservationStatusService>();
 
             services.AddControllersWithViews().AddNToastNotifyNoty(new NToastNotify.NotyOptions()
             {
