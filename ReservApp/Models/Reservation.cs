@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ReservApp.Models
 {
-    public partial class Réservation
+    public partial class Reservation
     {
         public int ID { get; set; }
         public DateTime Date { get; set; } = System.DateTime.Now;

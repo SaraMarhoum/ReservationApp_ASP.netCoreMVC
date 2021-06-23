@@ -9,6 +9,6 @@ namespace ReservApp.Services
     public interface IReservStatusService
     {
         Task<string> GetReservStatusById(int ID);
-        Task<Réservation> GetReservStatusDetails(int ID);
+        Task<Reservation> GetReservStatusDetails(int ID);
     }
 }

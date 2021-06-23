@@ -16,7 +16,7 @@ namespace ReservApp.Data
         }
 
         public virtual DbSet<Apprenant> Apprenants { get; set; }
-        public virtual DbSet<Réservation> Réservations { get; set; }
+        public virtual DbSet<Reservation> Réservations { get; set; }
         public DbSet<ReservApp.Models.RéservationViewmodel> RéservationViewmodel { get; set; }
 
     }

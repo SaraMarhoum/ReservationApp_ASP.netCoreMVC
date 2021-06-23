@@ -25,7 +25,7 @@ namespace ReservApp.Services
             return name;
         }
 
-        public async Task<Réservation> GetReservStatusDetails(int ID)
+        public async Task<Reservation> GetReservStatusDetails(int ID)
         {
             var emp = await _appDbContext.Réservations.FirstOrDefaultAsync(c => c.ID == ID);
             return emp;

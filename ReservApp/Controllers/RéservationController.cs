@@ -206,7 +206,7 @@ namespace ReservApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateAsync(Réservation nec)
+        public async Task<IActionResult> CreateAsync(Reservation nec)
         {
             var user = await _userManager.GetUserAsync(User);
             nec.Apprenants = user;
@@ -247,7 +247,7 @@ namespace ReservApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(Réservation nc)
+        public async Task<IActionResult> Edit(Reservation nc)
         {
             if (ModelState.IsValid)
             {
@@ -285,7 +285,7 @@ namespace ReservApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Delete(Réservation nc)
+        public async Task<IActionResult> Delete(Reservation nc)
         {
             if (ModelState.IsValid)
             {

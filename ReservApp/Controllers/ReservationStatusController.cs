@@ -31,7 +31,7 @@ namespace ReservApp.Controllers
 
 
         [HttpGet(nameof(GetReservStatusDetails))]
-        public async Task<Réservation> GetReservStatusDetails(int ID)
+        public async Task<Reservation> GetReservStatusDetails(int ID)
         {
             var result = await _reservStatusService.GetReservStatusDetails(ID);
             return result;

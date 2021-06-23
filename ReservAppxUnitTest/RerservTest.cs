@@ -29,7 +29,7 @@ namespace ReservAppxUnitTest
         [Fact]
         public async void GetReservStatusDetails()
         {
-            var reservationDTO = new Réservation()
+            var reservationDTO = new Reservation()
             {
                 ID = 1,
                 Status = "JK"
