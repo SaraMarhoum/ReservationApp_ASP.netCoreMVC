@@ -43,7 +43,7 @@ jobs:
           email: "sara_maroum@hotmail.com" # your heroku email
           api_key: ${{ secrets.HEROKU_API_KEY }} # your heroku api key
           app_name: "reservapp936" # you aplication name
-          dockerfile_path: 'Dockerfile' # set the path to the folder where the Dockerfile is located
+          dockerfile_path: 'ReservationApp_ASP.netCoreMVC/ReservationApp_ASP.netCoreMVC/Dockerfile' # set the path to the folder where the Dockerfile is located
     
     #- name: Build, Push and Deploy to Heroku
      # id: heroku
