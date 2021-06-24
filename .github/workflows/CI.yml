@@ -43,6 +43,6 @@ jobs:
           email: "sara_maroum@hotmail.com" # your heroku email
           api_key: ${{ secrets.HEROKU_API_KEY }} # your heroku api key
           app_name: "reservapp936" # you aplication name
-          dockerfile_path: '.' # set the path to the folder where the Dockerfile is located
+          dockerfile_path: 'Dockerfile' # set the path to the folder where the Dockerfile is located
         
 
