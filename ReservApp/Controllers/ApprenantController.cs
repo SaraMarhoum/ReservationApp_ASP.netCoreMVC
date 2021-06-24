@@ -7,7 +7,7 @@ namespace ReservApp.Controllers
 {
     public class ApprenantController : Controller
     {
-
+        //Test controller
         private readonly UserManager<Apprenant> _userManager;
 
         public ApprenantController(UserManager<Apprenant> userManager)
