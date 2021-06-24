@@ -38,12 +38,12 @@ jobs:
        
     - name: Deploy Docker image on Heroku
       id: heroku
-      uses: jctaveras/heroku-deploy@v1.0.0 # use the latest version of the action
+      uses: uses:jctaveras/heroku-deploy@v2.1.2 # use the latest version of the action
       with:
           email: "sara_maroum@hotmail.com" # your heroku email
           api_key: ${{ secrets.HEROKU_API_KEY }} # your heroku api key
           app_name: "reservapp936" # you aplication name
-          dockerfile_path: 'ReservationApp_ASP.netCoreMVC/ReservApp/Dockerfile' # set the path to the folder where the Dockerfile is located
+          dockerfile_path: 'ReservationApp_ASP.netCoreMVC/Dockerfile' # set the path to the folder where the Dockerfile is located
     
     #- name: Build, Push and Deploy to Heroku
      # id: heroku
