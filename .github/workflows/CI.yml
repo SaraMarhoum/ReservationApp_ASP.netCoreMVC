@@ -35,4 +35,13 @@ jobs:
        registry: docker.io
        username: ${{ secrets.DOCKER_USERNAME }}
        password: ${{ secrets.DOCKER_PASSWORD }}
+       
+    - name: Deploy Docker image on Heroku
+      id: heroku
+      uses: jctaveras/heroku-deploy@v1.0.0 # use the latest version of the action
+      with:
+          email: "sara_maroum@hotmail.com" # your heroku email
+          api_key: ${{ secrets.HEROKU_API_KEY }} # your heroku api key
+          app_name: "reservapp936" # you aplication name
+          dockerfile_path: 'lstat /home/runner/work/ReservationApp_ASP.netCoreMVC/ReservationApp_ASP.netCoreMVC/Dockerfile' # set the path to the folder where the Dockerfile is located
 
